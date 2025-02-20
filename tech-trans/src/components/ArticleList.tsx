@@ -5,19 +5,19 @@ const articles = [
     id: "learn-typescript-functions",
     title: "Learn TypeScript functions",
     description: "Master the basics of TypeScript functions and improve your coding skills.",
-    imageUrl: "/functions.png",
+    imageUrl: "/typescript-functions.jpg",
   },
   {
     id: "enhance-skills-time-poor",
     title: "Enhance your skills even if you're time poor",
     description: "Discover effective strategies for learning and growing in tech with limited time.",
-    imageUrl: "/learning.png",
+    imageUrl: "/time-poor-learning.jpg",
   },
   {
     id: "using-ai-to-build-apps",
     title: "Using AI to build apps",
     description: "Explore how AI can revolutionize your app development process.",
-    imageUrl: "/aiapp.png",
+    imageUrl: "/ai-app-building.jpg",
   },
 ]
 
