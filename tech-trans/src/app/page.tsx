@@ -1,6 +1,6 @@
+import ArticleList from "@/components/ArticleList"
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
-import ArticleList from "@/components/ArticleList"
 import Footer from "@/components/Footer"
 
 export default function Home() {
@@ -9,12 +9,12 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <div className="bg-secondary bg-opacity-10">
-          <ArticleList />
-        </div>
+        <ArticleList />
       </main>
       <Footer />
     </div>
   )
 }
+
+
 
