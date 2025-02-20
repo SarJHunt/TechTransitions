@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss"
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,16 +16,32 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#7b68a3",
+          DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          light: "#9a8abc",
-          dark: "#5c4e7a",
+          "50": "#f2eff7",
+          "100": "#e6e1ef",
+          "200": "#cbb3da",
+          "300": "#af86c5",
+          "400": "#9458b0",
+          "500": "#7b68a3",
+          "600": "#5c4e7a",
+          "700": "#423552",
+          "800": "#281b29",
+          "900": "#0e0201",
         },
         secondary: {
-          DEFAULT: "#84975c",
+          DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-          light: "#a1b277",
-          dark: "#677a47",
+          "50": "#f3f5ee",
+          "100": "#e7ebde",
+          "200": "#d0d7be",
+          "300": "#b9c39e",
+          "400": "#a2af7e",
+          "500": "#84975c",
+          "600": "#657346",
+          "700": "#474f30",
+          "800": "#282b1a",
+          "900": "#0a0704",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -53,21 +69,42 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      typography: (theme) => ({
+      typography: {
         DEFAULT: {
           css: {
-            color: theme("colors.gray.900"),
+            maxWidth: "none",
+            color: "inherit",
             a: {
-              color: theme("colors.primary.DEFAULT"),
+              color: "#7b68a3",
               "&:hover": {
-                color: theme("colors.primary.dark"),
+                color: "#5c4e7a",
               },
+            },
+            h1: {
+              color: "inherit",
+            },
+            h2: {
+              color: "inherit",
+            },
+            h3: {
+              color: "inherit",
+            },
+            h4: {
+              color: "inherit",
+            },
+            h5: {
+              color: "inherit",
+            },
+            h6: {
+              color: "inherit",
             },
           },
         },
-      }),
+      },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
 }
+
+export default config
 

@@ -2,7 +2,13 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
-import type { Article, PageProps, GenerateMetadataProps } from "@/types"
+
+interface Article {
+  id: string
+  title: string
+  content: string
+  imageUrl: string
+}
 
 // This would typically come from a database or API
 const articles: Article[] = [
@@ -118,7 +124,7 @@ const articles: Article[] = [
   },
 ]
 
-export async function generateMetadata({ params }: GenerateMetadataProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const article = articles.find((a) => a.id === params.id)
   return {
     title: article ? `${article.title} | Tech Transitions` : "Article Not Found",
@@ -126,7 +132,7 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
   }
 }
 
-export default function ArticlePage({ params }: PageProps) {
+export default function ArticlePage({ params }: { params: { id: string } }) {
   const article = articles.find((a) => a.id === params.id)
 
   if (!article) {
